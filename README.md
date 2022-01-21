@@ -93,7 +93,7 @@ MARIADB_ROOT_PASSWORD=password
 ```
 
 With this configuration ssh works on `2222` port without any additional steps.
-Caution!!! If you have recent `OpenSSH`, you wouldn't be able to pull repositories using `ssh` if you have `rsa` key. For more information 
+Caution!!! If you have recent `OpenSSH`, you wouldn't be able to pull repositories using `ssh` if you have `rsa` key. For more information check second link. 
 
 ### Links
 - [Grovbox theme](https://github.com/perpetualCreations/gruvbox-gitea)
