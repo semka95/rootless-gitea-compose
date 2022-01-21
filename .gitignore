@@ -1,0 +1,5 @@
+config/
+data/
+custom/
+
+gitea.env
