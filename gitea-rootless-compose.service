@@ -6,11 +6,11 @@ After=common-compose.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/home/ubuntu/rootless-gitea-compose
-Environment="DOCKER_HOST=unix:///run/user/1001/docker.sock"
-ExecStartPre=/home/ubuntu/.local/bin/docker-compose down
-ExecStart=/home/ubuntu/.local/bin/docker-compose up -d
-ExecStop=/home/ubuntu/.local/bin/docker-compose down
+WorkingDirectory=/home/semyon/rootless-gitea-compose
+Environment="DOCKER_HOST=unix:///run/user/1000/docker.sock"
+ExecStartPre=docker compose down
+ExecStart=docker compose up -d
+ExecStop=docker compose down
 TimeoutStartSec=0
 
 [Install]

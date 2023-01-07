@@ -2,12 +2,12 @@ version: "3"
 
 services:
   gitea:
-    image: gitea/gitea:1.15.10-rootless
+    image: gitea/gitea:1.18.0-rootless
     restart: always
     volumes:
-      - ./data:/var/lib/gitea
-      - ./config:/etc/gitea
-      - ./custom:/var/lib/gitea/custom 
+      - gitea-data:/var/lib/gitea
+      - gitea-config:/etc/gitea
+        #- ./custom:/var/lib/gitea/custom 
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -18,6 +18,12 @@ services:
     networks:
       - proxy-tier
       - maria
+
+volumes:
+  gitea-data:
+    driver: local
+  gitea-config:
+    driver: local
 
 networks:
   proxy-tier:
